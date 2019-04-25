@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Vue与Django高性能全栈论道</title>
+    <style>
+        #app {
+            position: relative;
+            width: 100%;
+            height: 200px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            text-align: center;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            margin: auto;
+        }
+
+        div {
+            width: 400px;
+            height: 600px;
+            border: 1px solid #000;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .router-link-active{
+            text-decoration: none;
+        }
+
+    </style>
+    <link rel="stylesheet" href="static/css/buttons.css">
+    <script src="https://cdn.staticfile.org/vue/2.4.2/vue.min.js"></script>
+    <script src="https://cdn.staticfile.org/vue-router/2.7.0/vue-router.min.js"></script>
+</head>
+<body>
+<div id="app">
+    <ul>
+        <li>
+            <router-link to="/woman">Woman</router-link>
+        </li>
+        <li>
+            <router-link to="/man">Man</router-link>
+        </li>
+        <li>
+            <router-link to="/family">Family</router-link>
+        </li>
+    </ul>
+    <p>
+        <router-view></router-view>
+    </p>
+</div>
+
+<script>
+
+    const Woman = {template: '<p><img src="static/img/woman.png"></p>'};
+    const Man = {template: '<p><img src="static/img/man.png"></p>'};
+    const Family = {template: '<p><img src="static/img/family-man-woman-girl_1f468-200d-1f469-200d-1f467.png"></p>'}
+
+    const routes = [
+
+        {path: '/woman', component: Woman},
+        {path: '/man', component: Man},
+        {path: '/family', component: Family}
+    ];
+    const router = new VueRouter({
+        mode: 'history',
+        routes
+    });
+    var vm = new Vue({
+        router,
+
+    }).$mount('#app')
+
+</script>
+</body>
+</html>

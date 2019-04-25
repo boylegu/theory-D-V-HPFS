@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+        #app {
+            width: 300px;
+            height: 280px;
+            margin: 0 0 0 50px;
+            background: #ffffff;
+        }
+
+        #face input {
+            margin: 0 0 0 140px;
+            float: left;
+            border: none;
+            width: 30px;
+            height: 30px;
+        }
+
+        #faceul {
+            margin: 0 0 0 2px;
+            width: 290px;
+        }
+
+        #faceul li {
+            float: left;
+            border: 1px solid #b4b4b4;
+            margin: 5px 0 0 4px;
+            height: 52px;
+            width: 50px;
+        }
+
+        #faceul li a {
+
+            display: block;
+            height: 52px;
+            width: 50px;
+        }
+
+        #faceul img {
+            margin: 5px 0 0 5px;
+            border: none;
+            height: 40px;
+            width: 40px;
+        }
+
+        li {
+            list-style-type: none
+        }
+
+        .modal-mask {
+            position: fixed;
+            z-index: 9998;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, .5);
+            display: table;
+            transition: opacity .3s ease;
+        }
+
+        .modal-wrapper {
+            display: table-cell;
+            vertical-align: middle;
+        }
+
+        .modal-container {
+            width: 300px;
+            margin: 0px auto;
+            margin-top: -10px;
+            margin-left: 50px;
+            background-color: #fff;
+            border-radius: 2px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, .33);
+            transition: all .3s ease;
+            font-family: Helvetica, Arial, sans-serif;
+        }
+
+        .modal-header h3 {
+            margin-top: 0;
+            color: #42b983;
+        }
+
+        .modal-default-button {
+            float: right;
+        }
+
+        /*
+          The following styles are auto-applied to elements with
+          transition="modal" when their visibility is toggled
+          by Vue.js.
+
+          You can easily play with the modal transition by editing
+          these styles.
+         */
+
+        .modal-enter {
+            opacity: 0;
+        }
+
+        .modal-leave-active {
+            opacity: 0;
+        }
+
+
+        .modal-enter .modal-container,
+        .modal-leave-active .modal-container {
+            -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+        }
+
+
+    </style>
+    <script src="https://cdn.staticfile.org/vue/2.4.2/vue.min.js"></script>
+    <script src="https://cdn.staticfile.org/vue-router/2.7.0/vue-router.min.js"></script>
+</head>
+<body>
+<script type="text/x-template" id="modal-template">
+    <transition name="modal">
+        <div class="modal-mask">
+            <div class="modal-wrapper">
+                <div class="modal-container">
+                    <div align="center" class="modal-body">
+                        <slot name="body">
+                            <img src="static/img/nerd-face3.png">
+                        </slot>
+                    </div>
+                    <div class="modal-footer">
+                        <slot name="footer">
+                            <button class="modal-default-button" @click="$emit('close')">
+                                Close
+                            </button>
+                        </slot>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </transition>
+</script>
+
+<div id="app">
+    <ul id="faceul">
+        <li><a href="#"><img src="static/img/nerd-face2.png"></img></a></li>
+        <li><a href="#" @click="showModal = true"><img src="static/img/nerd-face3.png"></img></a></li>
+        <li><a href="#"><img src="static/img/nerd-face4.png"></img></a></li>
+        <li><a href="#"><img src="static/img/nerd-face5.png"></img></a></li>
+        <li><a href="#"><img src="static/img/nerd-face6.png"></img></a></li>
+        <li><a href="#"><img src="static/img/nerd-face7.png"></img></a></li>
+        <li><a href="#"><img src="static/img/nerd-face8.png"></img></a></li>
+        <li><a href="#"><img src="static/img/smiling-face1.png"></img></a></li>
+        <li><a href="#"><img src="static/img/smiling-face2.png"></img></a></li>
+        <li><a href="#"><img src="static/img/smiling-face3.png"></img></a></li>
+    </ul>
+    <modal v-if="showModal" @close="showModal = false">
+
+    </modal>
+
+</div>
+<script>
+
+    Vue.component('modal', {
+        template: '#modal-template'
+    });
+
+    const app = new Vue({
+        data: {
+            showModal: false
+        }
+    }).$mount('#app')
+
+</script>
+</body>
+</html>

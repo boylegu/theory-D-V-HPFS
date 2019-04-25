@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #app {
+            width: 300px;
+            height: 280px;
+            margin: 0 0 0 50px;
+            background: #ffffff;
+        }
+
+        #face input {
+            margin: 0 0 0 140px;
+            float: left;
+            border: none;
+            width: 30px;
+            height: 30px;
+        }
+
+        #faceul {
+            margin: 0 0 0 2px;
+            width: 290px;
+        }
+
+        #faceul li {
+            float: left;
+            border: 1px solid #b4b4b4;
+            margin: 5px 0 0 4px;
+            height: 52px;
+            width: 50px;
+        }
+
+        #faceul li a {
+
+            display: block;
+            height: 52px;
+            width: 50px;
+        }
+
+        #faceul img {
+            margin: 5px 0 0 5px;
+            border: none;
+            height: 40px;
+            width: 40px;
+        }
+
+        li {
+            list-style-type: none
+        }
+
+
+    </style>
+    <script src="https://cdn.staticfile.org/vue/2.4.2/vue.min.js"></script>
+    <script src="https://cdn.staticfile.org/vue-router/2.7.0/vue-router.min.js"></script>
+</head>
+<body>
+
+<div id="app">
+    <router-view></router-view>
+</div>
+<script>
+    const Emoji = { template: '<ul id="faceul">\n' +
+        '        <li><a href="#"><img src="static/img/nerd-face2.png"></img></a></li>\n' +
+        '        <li><a href="#"><img src="static/img/nerd-face3.png"></img></a></li>\n' +
+        '        <li><a href="#"><img src="static/img/nerd-face4.png"></img></a></li>\n' +
+        '        <li><a href="#"><img src="static/img/nerd-face5.png"></img></a></li>\n' +
+        '        <li><a href="#"><img src="static/img/nerd-face6.png"></img></a></li>\n' +
+        '        <li><a href="#"><img src="static/img/nerd-face7.png"></img></a></li>\n' +
+        '        <li><a href="#"><img src="static/img/nerd-face8.png"></img></a></li>\n' +
+        '        <li><a href="#"><img src="static/img/smiling-face1.png"></img></a></li>\n' +
+        '        <li><a href="#"><img src="static/img/smiling-face2.png"></img></a></li>\n' +
+        '        <li><a href="#"><img src="static/img/smiling-face3.png"></img></a></li>\n' +
+        '        </ul>' }
+
+    const routes = [
+        { path: '/images', name:'images', component: Emoji },
+    ]
+
+    const router = new VueRouter({
+        mode: 'history',
+        routes
+    })
+
+    const app = new Vue({
+        router,
+        created() {
+            this.$router.push({  name:'images',query: { of:  'emoji' }});
+            console.log(window.location)
+        },
+    }).$mount('#app')
+
+</script>
+</body>
+</html>

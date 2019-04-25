@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        p {font-weight: 900}
+    </style>
+    <script src="https://cdn.staticfile.org/vue/2.4.2/vue.min.js"></script>
+    <script src="https://cdn.staticfile.org/vue-router/2.7.0/vue-router.min.js"></script>
+</head>
+<body>
+
+<div id="app">
+    <router-view></router-view>
+</div>
+<script>
+    const Location = {
+        data() {
+            return {
+                'item': window.location
+            }
+        },
+
+        template: '<p> ' +
+        'location = {' + '<br>' +
+        '&emsp;protocol: ' + '{{ item.protocol }}' + '<br>' +
+        '&emsp;hostname: ' + '{{ item.hostname }}' + '<br>' +
+        '&emsp;pathname: ' + '{{ item.pathname }}' + '<br>' +
+        '&emsp;search: ' + '{{ item.search }}' + '<br>' +
+        '&emsp;hash: ' + '{{ item.hash }}' + '<br>' +
+        '}' +
+        '</p>'
+    }
+
+    const routes = [
+        { path: '/one', name:'location', component: Location },
+    ]
+
+    const router = new VueRouter({
+        mode: 'history',
+        routes
+    })
+
+    const app = new Vue({
+        router,
+        created() {
+            this.$router.push({  name:'location',query: { key:  'value' }, hash: '#detail'});
+        },
+    }).$mount('#app')
+
+</script>
+</body>
+</html>
