@@ -1,0 +1,19 @@
+{
+  "name": "es6_proj",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "babel-node src/index.js",
+    "debug": "babel-node debug src/index.js",
+    "build": "babel src -d build -s inline"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-stage-2": "^6.24.1"
+  }
+}
