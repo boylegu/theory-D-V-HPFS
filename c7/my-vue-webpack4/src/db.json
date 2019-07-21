@@ -1,0 +1,32 @@
+[
+    {
+        "imageUrl": "https://www.runoob.com/wp-content/uploads/2017/08/20130807-es6-e1420205362328.png",
+        "title": "ECMAScript 2015",
+        "description": "ES2015(又名ES6)是一个JavaScript语言的某个版本，就像ES3(假如您曾经写过)一样。例如，在声明变量时，var与let和const一样有效。let和const是在2015年引入的，用于简化JavaScript中的变量管理，但这并不意味着var不再使用或不再工作。ECMAScript只是试图通过许多改进使JavaScript变得更好，使得大规模软件开发变得更容易。"
+    },
+    {
+        "imageUrl": "https://cn.vuejs.org/images/logo.png",
+        "title": "Vue.js",
+        "description": "与过去的jQuery不同，Vue.js在被创造之初，就深受Angular的启发。事实上，它的创建者尤雨溪是在谷歌从事Angular相关工作之后便开始这个项目。他决定提取Angular的一些很酷的部分，创建一个真正轻量级的框架，并且更容易学习和使用。"
+    },
+    {
+        "imageUrl": "https://04imgmini.eastday.com/mobile/20181018/20181018180642_12b8620b55fa99b8755f3c40c1b80dff_11.jpeg",
+        "title": "Webpack",
+        "description": "大名鼎鼎的编译构建工具——Webpack。作为现代前端JavaScript工具集的主要部分，它将无数的小文件转换成一个(或多个)内聚模块(包)，使得网页加载速度变得极快。"
+    },
+    {
+        "imageUrl": "https://www.w3schools.com/whatis/img_js.png",
+        "title": "javaScript",
+        "description": "JavaScript是由天才程序员布兰登·艾奇于1995年5月在网景工作时仅花了十天时间创建的，它的灵感来自其他三门语言Java、Scheme和Self。后来艾奇离开网景之后，和好友共同创立了Mozilla(就是大名鼎鼎的火狐浏览器)，目前他正再次创业，开发一款极具技术革新的浏览器“Brave”。"
+    },
+    {
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg",
+        "title": "Python",
+        "description": "自从荷兰计算机科学家Guido van Rossum于1991年首次发布了Python之后，这门语言如今已成为全球最受欢迎的计算机编程语言之一，活跃在人工智能、Web开发、区块链技术、社交生活等各个领域之中。作为已经发展了将近30年并极具可读性的高级计算机语言，无论是开发效率、还是动态语言的性能优化，在最新的Python版本中已经做到了很好的平衡点和足够的优秀。"
+    },
+    {
+        "imageUrl": "https://github.com/boylegu/vue-lazyload-text/blob/master/example/assets/vue-lazyload-text.png?raw=true",
+        "title": "vue-lazyload-text",
+        "description": "基于IntersectionObserver API实现的一款高性能的文本惰性加载的Vue插件，在某些场景下，服务器端会直接返回一些超大的文本数据，用于在浏览器中显示。面对突如其来的海量数据，而该插件主要解决在javaScript的单线程机制造成页面的卡顿或浏览器因内存溢出而崩溃的问题。"
+    }
+]
