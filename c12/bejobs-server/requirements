@@ -1,0 +1,11 @@
+grpcio_tools==1.24.0
+channels==2.3.0
+channels-redis==2.4.0
+djangorestframework==3.10.1
+daphne==2.3.0
+Django==2.2.3
+gevent==1.4.0
+purerpc==0.5.2
+uWSGI==2.0.18
+requests==2.22.0
+requests-futures==1.0.0

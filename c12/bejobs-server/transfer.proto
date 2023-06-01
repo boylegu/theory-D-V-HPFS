@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+import "google/protobuf/timestamp.proto";
+
+package jobserver;
+
+
+service JobServer {
+    rpc PutResults (stream Data) returns (Result) {
+    }
+}
+
+
+message Data {
+    string host = 1;
+    string output = 2;
+    int32 exitcode = 3;
+    string task_id = 4;
+    google.protobuf.Timestamp end_dt = 5;
+}
+
+message Result {
+    string task_id = 1;
+}

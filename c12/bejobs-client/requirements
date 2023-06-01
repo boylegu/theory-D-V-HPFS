@@ -1,0 +1,3 @@
+grpcio_tools==1.24.0
+aiohttp==3.6.0
+purerpc==0.5.2
